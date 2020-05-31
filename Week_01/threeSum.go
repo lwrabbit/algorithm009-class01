@@ -28,18 +28,18 @@ func ThreeSum1(nums []int) [][]int {
 		if nums[i] > 0 {
 			break
 		}
-		if i > 0 && nums[i] == nums[i-1]{
+		if i > 0 && nums[i] == nums[i-1] {
 			continue
 		}
 		for left, right := i+1, len(nums)-1; left < right; {
 			if nums[i]+nums[left]+nums[right] == 0 {
 				ret = append(ret, []int{nums[i], nums[left], nums[right]})
 				for left < right {
-					if nums[left] == nums[left+1]{
+					if nums[left] == nums[left+1] {
 						left++
 						continue
 					}
-					if nums[right] == nums[right-1]{
+					if nums[right] == nums[right-1] {
 						right--
 						continue
 					}
