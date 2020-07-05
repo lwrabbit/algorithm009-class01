@@ -7,7 +7,7 @@
 
 输入：arr = [0,1,2,1], k = 1
 输出：[0]
- 
+
 限制：
 0 <= k <= arr.length <= 10000
 0 <= arr[i] <= 10000
@@ -20,6 +20,6 @@ import (
 )
 
 func TestGetLeastNumbers(t *testing.T) {
-	arr := []int{4,5,1,6,2,7,3,8}
-	fmt.Println(GetLeastNumbers(arr,4))
+	arr := []int{4, 5, 1, 6, 2, 7, 3, 8}
+	fmt.Println(GetLeastNumbers(arr, 4))
 }

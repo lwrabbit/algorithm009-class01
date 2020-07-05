@@ -46,6 +46,6 @@ func maxInt(x, y int) int {
 }
 
 func main() {
-	a := []int{1,8,6,2,5,4,8,3,7}
+	a := []int{1, 8, 6, 2, 5, 4, 8, 3, 7}
 	fmt.Println(MaxArea(a))
 }

@@ -17,7 +17,7 @@
  1  3  -1 [-3  5  3] 6  7       5
  1  3  -1  -3 [5  3  6] 7       6
  1  3  -1  -3  5 [3  6  7]      7
- 
+
 提示：
 1 <= nums.length <= 10^5
 -10^4 <= nums[i] <= 10^4
@@ -32,6 +32,6 @@ import (
 )
 
 func TestMaxSlidingWindow(t *testing.T) {
-	nums := []int{1,3,-1,-3,5,3,6,7}
-	fmt.Println(MaxSlidingWindow(nums,3))
+	nums := []int{1, 3, -1, -3, 5, 3, 6, 7}
+	fmt.Println(MaxSlidingWindow(nums, 3))
 }

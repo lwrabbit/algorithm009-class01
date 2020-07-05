@@ -10,22 +10,22 @@ package main
  */
 
 type TreeNode struct {
-	Val int
-	Left *TreeNode
+	Val   int
+	Left  *TreeNode
 	Right *TreeNode
 }
 
 func invertTree(root *TreeNode) *TreeNode {
-	if root == nil{
+	if root == nil {
 		return root
 	}
-	if root != nil && root.Left == nil && root.Right == nil{
+	if root != nil && root.Left == nil && root.Right == nil {
 		return root
 	}
-	root.Left,root.Right = root.Right,root.Left
+	root.Left, root.Right = root.Right, root.Left
 	invertTree(root.Left)
 	invertTree(root.Right)
-	return  root
+	return root
 }
 
 func main() {

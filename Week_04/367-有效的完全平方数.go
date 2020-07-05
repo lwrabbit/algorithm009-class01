@@ -3,17 +3,17 @@ package main
 import "fmt"
 
 func isPerfectSquare(num int) bool {
-	if num == 1{
+	if num == 1 {
 		return true
 	}
-	left,right := 1,num
-	for left <= right{
-		mid := left + (right - left)>>1
-		if mid * mid == num{
+	left, right := 1, num
+	for left <= right {
+		mid := left + (right-left)>>1
+		if mid*mid == num {
 			return true
-		}else if mid * mid > num{
+		} else if mid*mid > num {
 			right = mid - 1
-		}else{
+		} else {
 			left = mid + 1
 		}
 	}

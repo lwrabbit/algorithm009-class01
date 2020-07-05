@@ -1,15 +1,15 @@
 package main
 
 func permute(nums []int) [][]int {
-	if len(nums) == 1{
+	if len(nums) == 1 {
 		return [][]int{nums}
 	}
 	res := [][]int{}
-	for i,num := range nums{
-		remainder := append(nums[:i],nums[i+1:]...)
+	for i, num := range nums {
+		remainder := append(nums[:i], nums[i+1:]...)
 		sub := permute(remainder)
-		for _,s := range sub{
-			res = append(res,append(s,num))
+		for _, s := range sub {
+			res = append(res, append(s, num))
 		}
 	}
 	return res

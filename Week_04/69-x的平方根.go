@@ -22,15 +22,15 @@ import "fmt"
 */
 
 func mySqrt(x int) int {
-	if x == 0 || x == 1{
+	if x == 0 || x == 1 {
 		return x
 	}
-	left,right := 1,x
-	for left <= right{
-		mid := left+(right-left)>>1
-		if mid*mid < x{
+	left, right := 1, x
+	for left <= right {
+		mid := left + (right-left)>>1
+		if mid*mid < x {
 			left = mid + 1
-		}else{
+		} else {
 			right = mid - 1
 		}
 	}

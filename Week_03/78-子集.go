@@ -25,20 +25,20 @@ import "fmt"
 //	l = l[:len(l)-1]
 //}
 
-func subsets(nums []int)[][]int  {
+func subsets(nums []int) [][]int {
 	res := [][]int{}
-	for _,num := range nums{
+	for _, num := range nums {
 		newSet := []int{}
-		for _,subset := range res{
-			newSubSet := append(subset,num)
-			newSet = append(newSet,newSubSet...)
+		for _, subset := range res {
+			newSubSet := append(subset, num)
+			newSet = append(newSet, newSubSet...)
 		}
-		res = append(res,newSet)
+		res = append(res, newSet)
 	}
 	return res
 }
 
 func main() {
-	nums := []int{1,2,3}
+	nums := []int{1, 2, 3}
 	fmt.Println(subsets(nums))
 }

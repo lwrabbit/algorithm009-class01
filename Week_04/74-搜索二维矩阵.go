@@ -1,4 +1,5 @@
 package main
+
 /*
 编写一个高效的算法来判断 m x n 矩阵中，是否存在一个目标值。该矩阵具有如下特性：
 
@@ -29,16 +30,16 @@ func searchMatrix(matrix [][]int, target int) bool {
 	if len(matrix) < 1 {
 		return false
 	}
-	m,n := len(matrix),len(matrix[0])
-	left,right := 0,m*n-1
-	for left <= right{
-		mid := (left+right)/2
-		row,col := mid/n,mid%n
-		if matrix[row][col] == target{
+	m, n := len(matrix), len(matrix[0])
+	left, right := 0, m*n-1
+	for left <= right {
+		mid := (left + right) / 2
+		row, col := mid/n, mid%n
+		if matrix[row][col] == target {
 			return true
-		}else if matrix[row][col] > target{
+		} else if matrix[row][col] > target {
 			right = mid - 1
-		}else{
+		} else {
 			left = mid + 1
 		}
 	}

@@ -15,7 +15,7 @@ func climbStairs1(n int) int {
 	if n < 3 {
 		return n
 	}
-	if v,ok:= mSteps[n];ok{
+	if v, ok := mSteps[n]; ok {
 		return v
 	}
 	steps := climbStairs(n-1) + climbStairs(n-2)

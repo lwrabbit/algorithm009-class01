@@ -73,12 +73,12 @@ func swapPairs2(head *ListNode) *ListNode {
 }
 
 func hasCycle(head *ListNode) bool {
-	if head == nil || head.Next == nil{
+	if head == nil || head.Next == nil {
 		return false
 	}
-	fast,slow := head.Next.Next,head.Next
+	fast, slow := head.Next.Next, head.Next
 	for fast.Next != nil {
-		if fast == slow{
+		if fast == slow {
 			return true
 		}
 		fast = fast.Next.Next
@@ -88,12 +88,12 @@ func hasCycle(head *ListNode) bool {
 }
 
 func hasCycle(head *ListNode) bool {
-	if head == nil || head.Next == nil{
+	if head == nil || head.Next == nil {
 		return false
 	}
-	fast,slow := head.Next,head
-	for fast != slow{
-		if fast == nil || fast.Next == nil{
+	fast, slow := head.Next, head
+	for fast != slow {
+		if fast == nil || fast.Next == nil {
 			return false
 		}
 		slow = slow.Next
@@ -103,27 +103,27 @@ func hasCycle(head *ListNode) bool {
 }
 
 func reverseKGroup(head *ListNode, k int) *ListNode {
-	if head == nil{
+	if head == nil {
 		return nil
 	}
 	curGroupHead := head
 	cur := head
-	for i := 1; i <= k ;i++{
-		if cur == nil{
-			return  head
+	for i := 1; i <= k; i++ {
+		if cur == nil {
+			return head
 		}
 		cur = cur.Next
 	}
-	newHead := reverse(curGroupHead,cur)
-	curGroupHead.Next = reverseKGroup(cur,k)
+	newHead := reverse(curGroupHead, cur)
+	curGroupHead.Next = reverseKGroup(cur, k)
 	return newHead
 }
 
-func reverse(curGroupHead,nextGroupHead *ListNode)  *ListNode {
+func reverse(curGroupHead, nextGroupHead *ListNode) *ListNode {
 	cur := curGroupHead
 	var pre *ListNode
-	for cur != nextGroupHead{
-		pre,cur,cur.Next = cur,cur.Next,pre
+	for cur != nextGroupHead {
+		pre, cur, cur.Next = cur, cur.Next, pre
 	}
 	return pre
 }

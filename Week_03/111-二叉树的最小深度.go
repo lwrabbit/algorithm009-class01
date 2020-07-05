@@ -27,23 +27,23 @@ import "math"
 //}
 
 func minDepth(root *TreeNode) int {
-	if root == nil{
+	if root == nil {
 		return 0
 	}
-	if root.Left == nil && root.Right == nil{
+	if root.Left == nil && root.Right == nil {
 		return 1
 	}
 	min_depth := math.MaxInt64
-	if root.Left != nil{
-		min_depth = minInt(minDepth(root.Left),min_depth)
+	if root.Left != nil {
+		min_depth = minInt(minDepth(root.Left), min_depth)
 	}
-	if root.Right != nil{
-		min_depth = minInt(minDepth(root.Right),min_depth)
+	if root.Right != nil {
+		min_depth = minInt(minDepth(root.Right), min_depth)
 	}
-	return  min_depth+1
+	return min_depth + 1
 }
 
-func minInt(x,y int) int  {
+func minInt(x, y int) int {
 	if x < y {
 		return x
 	}

@@ -30,32 +30,32 @@ import "math"
 
 // 递归判断每个节点的上界和下界
 func isValidBST(root *TreeNode) bool {
-	return helper(root,math.MinInt64,math.MaxInt64)
+	return helper(root, math.MinInt64, math.MaxInt64)
 }
 
-func helper(root *TreeNode, lower int, upper int) bool{
-	if root == nil{
+func helper(root *TreeNode, lower int, upper int) bool {
+	if root == nil {
 		return true
 	}
 	if root.Val <= lower || root.Val >= upper {
 		return false
 	}
-	return helper(root.Left,lower,root.Val) && helper(root.Right,root.Val,upper)
+	return helper(root.Left, lower, root.Val) && helper(root.Right, root.Val, upper)
 }
 
 //中序遍历=升序遍历
 var last *TreeNode
 
 func isValidBST1(root *TreeNode) bool {
-	last = &TreeNode{Val:math.MinInt64}
+	last = &TreeNode{Val: math.MinInt64}
 	return dfs(root)
 }
 
-func dfs(root *TreeNode) bool  {
-	if root == nil{
+func dfs(root *TreeNode) bool {
+	if root == nil {
 		return true
 	}
-	if !dfs(root.Left) || root.Val <= last.Val{
+	if !dfs(root.Left) || root.Val <= last.Val {
 		return false
 	}
 	last = root

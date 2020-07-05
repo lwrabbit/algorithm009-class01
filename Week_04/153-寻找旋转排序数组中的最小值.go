@@ -34,7 +34,7 @@ import "fmt"
 //}
 
 func findMin(nums []int) int {
-	left, right := 0, len(nums) - 1
+	left, right := 0, len(nums)-1
 	for left < right {
 		mid := left + (right-left)>>1
 		if nums[mid] > nums[right] {
@@ -46,8 +46,7 @@ func findMin(nums []int) int {
 	return nums[left]
 }
 
-
 func main() {
-	nums := []int{1,2,3}
+	nums := []int{1, 2, 3}
 	fmt.Println(findMin(nums))
 }

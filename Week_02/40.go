@@ -4,11 +4,11 @@ import "container/heap"
 
 func GetLeastNumbers(arr []int, k int) []int {
 	h := &MinIntHeap{}
-	*h = append(*h,arr...)
+	*h = append(*h, arr...)
 	heap.Init(h)
 	res := []int{}
-	for i:=0;i<k;i++{
-		res = append(res,heap.Pop(h).(int))
+	for i := 0; i < k; i++ {
+		res = append(res, heap.Pop(h).(int))
 	}
 	return res
 }

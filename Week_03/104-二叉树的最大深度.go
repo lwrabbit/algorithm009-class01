@@ -10,19 +10,19 @@ package main
  */
 func maxDepth(root *TreeNode) int {
 	depth := 0
-	return maxDepthHelper(root,depth)
+	return maxDepthHelper(root, depth)
 }
 
-func maxDepthHelper(root *TreeNode,curDepth int)  int{
-	if root == nil{
+func maxDepthHelper(root *TreeNode, curDepth int) int {
+	if root == nil {
 		return curDepth
 	}
 	curDepth++
-	return maxInt(maxDepthHelper(root.Left,curDepth),maxDepthHelper(root.Right,curDepth))
+	return maxInt(maxDepthHelper(root.Left, curDepth), maxDepthHelper(root.Right, curDepth))
 }
 
-func maxInt(x,y int)int  {
-	if x<y{
+func maxInt(x, y int) int {
+	if x < y {
 		return y
 	}
 	return x
